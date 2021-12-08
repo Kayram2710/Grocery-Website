@@ -28,13 +28,15 @@
               padding-top: 12px;
               padding-bottom: 12px;
               text-align: left;
-              background-color: #a39262;
+              background-color: #4fce59;
               color: white;
             }
             </style>
     </head>
 
     <body>
+
+    
 
         <h1 style="text-align:center">Order History</h1>
 
@@ -51,49 +53,49 @@
                     <th></th>
                     <th></th>
           </tr>
-          <tr>
+          <tr id="row1">
             <th scope="row"><input type="checkbox" class="larger"/></th>
             <td>12-10-2021</td>
             <td>Order# 546</td>
             <td>$25 cad</td>
             <td>4x Lindt Hazelnut Chocolate, 2x Nature Valley Granola Bar</td>
-            <td><form method="get" action="p12.html">
-                <button id="button1id" name="button1id" class="btn btn-primary">Edit</button></form></td>
-            <td><button id="button1id" name="button1id" class="btn btn-danger">Delete</button></td>
+            <td><form method="get" action="message.html">
+                <button onclick="location.href = 'p12.html';" id="button1id" name="button1id" class="btn btn-primary">Edit</button></form></td>
+            <td><button onclick="removeElement('row1')" id="button1id" name="button1id" class="btn btn-danger">Delete</button></td>
             
           </tr>
-          <tr>
+          <tr id="row2">
             <th scope="row"><input type="checkbox" class="larger"/></th>
             <td>12-10-2021</td>
             <td>Order# 547</td>
             <td>$50 cad</td>
             <td>10x Windex, 20x Cleaning Sponge, 2x Tide Laundry Detergent</td>
-            <td><button id="button1id" name="button1id" class="btn btn-primary">Edit</button></td>
-            <td><button id="button1id" name="button1id" class="btn btn-danger">Delete</button></td>
+            <td><button onclick="location.href = 'p12.html';" id="button1id" name="button1id" class="btn btn-primary">Edit</button></td>
+            <td><button onclick="removeElement('row2')" id="button1id" name="button1id" class="btn btn-danger">Delete</button></td>
           </tr>
-          <tr>
+          <tr id="row3">
             <th scope="row"><input type="checkbox" class="larger"/></th>
             <td>13-10-2021</td>
             <td>Order# 548</td>
             <td>$1728 cad</td>
             <td>1x AirPods Pro, 1x iPhone 13 Pro</td>
-            <td><button id="button1id" name="button1id" class="btn btn-primary">Edit</button></td>
-            <td><button id="button1id" name="button1id" class="btn btn-danger">Delete</button></td>
+            <td><button onclick="location.href = 'p12.html';" id="button1id" name="button1id" class="btn btn-primary">Edit</button></td>
+            <td><button onclick="removeElement('row3')" id="button1id" name="button1id" class="btn btn-danger">Delete</button></td>
           </tr>
           </tr>
           </tr>
         </table>
-    <div align ="right">
-        <button id="button1id" name="button1id" class="btn btn-success">ADD </button>
-    </div>
-        
+        <div align ="right">
+        <button onclick="location.href = 'p12.html';" id="button1id" name="button1id" class="btn btn-success"  >ADD </button>
 
+      </div>
                 <div style="width: 100%; display: flex; justify-content: center; padding-bottom: 100px;">
-                </div>
+                </div> 
 
             </div>
         </div>
     
     </div>
+    <script src=javascript4.js></script>
     </body>
 </html>
