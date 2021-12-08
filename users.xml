@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<users>
+    <user>
+        <uname>Admin</uname>
+        <pass>Admin</pass>  
+        <role>admin</role>
+        <email>admin@gmail.com</email>
+    </user>
+</users>
