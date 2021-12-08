@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheets/style5&6.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class = "container">
+            <form method="post" action="sign_up.php">
+                <h2>Sign Up</h2>
+                <div class="p5-p6-text">
+                    <input  type="radio" id="customer" name="role" value="customer" />
+                <label for="customer">Customer</label><br />
+                <input  type="radio" id="admin" name="role" value="admin" />
+                <label  for="admin">Admin</label><br /><br />
+                </div>
+                
+                <label class="p5-p6-text" for="email">Email:</label>
+                <input type="email" id="email" name="email" value="">
+                <label class="p5-p6-text" for="uname"></label>Username:</label>
+                <input type="text" id="uname" name="uname" value="">
+                <label class="p5-p6-text" for="pass"></label>Password:</label>
+                <input type="password" id="pass" name="pass" value="">
+                <!-- <label class="p5-p6-text" for="confirm-password"></label>Confirm Password:</label>
+                <input type="text" id="confirm-password" name="pass" placeholder="Enter your password..."> -->
+                <br/><br/>
+                <button type="submit" class="btn btn-outline-success" >Sign Up</button>
+                <br/>
+                <!-- <button type="submit" class="btn btn-outline-warning">Reset Fields</button> -->
+            </form>
+        </div>
+
+          
+    </body>
+</html>
