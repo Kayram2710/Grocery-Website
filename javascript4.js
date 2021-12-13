@@ -14,9 +14,9 @@ function incrementElement(b) {
     // Removes an element from the document.
     var num= document.getElementById(b);
     num.value ++;  
-    let item = data[parseInt(b.substr(b.length - 1))+1].name;
-    let value = data[parseInt(b.substr(b.length - 1))+1].quantity;
-    let price = data[parseInt(b.substr(b.length - 1))+1].price;
+    let item = data[parseInt(b.substr(b.length - 1))].name;
+    let value = data[parseInt(b.substr(b.length - 1))].quantity;
+    let price = data[parseInt(b.substr(b.length - 1))].price;
 
     value = num.value;
     sessionStorage.setItem(item,value);
