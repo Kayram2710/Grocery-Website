@@ -29,8 +29,8 @@ function addToCart(products){
 
 function setItems(){
     
-    console.log('DATA: ',data);
-    console.log(sessionStorage.key(0));
+    // console.log('DATA: ',data);
+    // console.log(sessionStorage.key(0));
     if(sessionStorage.key(0) == 'IsThisFirstTime_Log_From_LiveServer'){
         for(let i=1; i<sessionStorage.length; i++) {
             let key = sessionStorage.key(i);
@@ -38,12 +38,12 @@ function setItems(){
             console.log(key, value, prices[key]);
             data[i]= {name:key,quantity:parseInt(value), price: prices[key]}
         }
-        console.log('DATA:',data);
+        // console.log('DATA:',data);
     }else{
         for(let i=0; i<sessionStorage.length; i++) {
             let key = sessionStorage.key(i);
             let value = sessionStorage.getItem(key);
-            console.log(key, value, prices[key]);
+            // console.log(key, value, prices[key]);
             data[i]= {name:key,quantity:parseInt(value), price: prices[key]}
         }
     }
@@ -107,7 +107,7 @@ function calcTotal(){
     //     let t = p * q;
     //     subTotal += t;
     // }
-    console.log(subTotal, '$');
+    // console.log(subTotal, '$');
     let taxQ = subTotal*(.09975);
     let taxG = subTotal*(0.05);
     let total = subTotal+taxQ+taxG;
