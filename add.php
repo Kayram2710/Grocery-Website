@@ -33,17 +33,20 @@ if(!file_exists("users.xml")){
 
     $xml=simplexml_load_file("users.xml");
     
+    $exists = false;
     foreach($xml->children() as $user) {
         if(strcmp($user->uname,$uname) == 0){
-            $user->$user.nodeValue("uname",$uname);
-            $user->$user.nodeValue("pass",$pass);
-            $user->$user.nodeValue("role",$role);
-            $user->$user.nodeValue("email",$email);
+            $user->replaceChild("uname",$uname);
+            $user->replaceChild("pass",$pass);
+            $user->replaceChild("role",$role);
+            $user->replaceChild("email",$email);
             $xml->asXML("users.xml");
             echo "Profile Updated.";
+            $exists = true;
             break;
         }
-    } else(){
+    }
+    if($exists == false){
         $user = $xml->addChild('user');
         $user->addChild("uname",$uname);
         $user->addChild("pass",$pass);
