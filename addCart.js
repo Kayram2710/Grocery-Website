@@ -30,13 +30,23 @@ function addToCart(products){
 function setItems(){
     
     console.log('DATA: ',data);
-    for(let i=1; i<sessionStorage.length; i++) {
-        let key = sessionStorage.key(i);
-        let value = sessionStorage.getItem(key);
-        console.log(key, value, prices[key]);
-        data[i]= {name:key,quantity:parseInt(value), price: prices[key]}
+    console.log(sessionStorage.key(0));
+    if(sessionStorage.key(0) == 'IsThisFirstTime_Log_From_LiveServer'){
+        for(let i=1; i<sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            let value = sessionStorage.getItem(key);
+            console.log(key, value, prices[key]);
+            data[i]= {name:key,quantity:parseInt(value), price: prices[key]}
+        }
+        console.log('DATA:',data);
+    }else{
+        for(let i=0; i<sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            let value = sessionStorage.getItem(key);
+            console.log(key, value, prices[key]);
+            data[i]= {name:key,quantity:parseInt(value), price: prices[key]}
+        }
     }
-    console.log('DATA:',data);
 }
 
 function removeItem(){
@@ -45,7 +55,7 @@ function removeItem(){
 
 // Calculates the total cost of the cart
 function totalCost(){
-
+    subTotal = 0;
     for ( const key in data) {
         let p = (data[key].price);
         let q = (data[key].quantity);
