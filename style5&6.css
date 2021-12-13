@@ -1,0 +1,23 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: 20px;
+}
+
+.text {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.roleselection {
+    text-decoration: underline;
+    font-size: 22px;
+    margin-bottom: 0px;
+}

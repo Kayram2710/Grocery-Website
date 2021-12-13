@@ -9,21 +9,77 @@
 
 <body>
     <div class="container">
-        <p class="user">Users:</p>
-        <ul class=userList>
-            <li>
-                <div class="entry">
-                    Email: johnkrammer@gmail.com<br> Password: bruhguy4<br>
-                </div>
-                <button type="button" class="edit">Edit</button><button type="button" class="delete">Delete</button></li><br>
-            <li>Email: jessicabaladc@hotmail.com<br> Password: hunkynunker32<br>
-                <button type="button" class="edit">Edit</button><button type="button" class="delete">Delete</button></li><br>
-            <li>Email: hwayatte620@gmail.com<br> Password: JousT1ngerGrubby<br>
-                <button type="button" class="edit">Edit</button><button type="button" class="delete">Delete</button></li>
-        </ul>
-        <button type="button" class="add">Add</button>
 
-    </div>
+        <p class="user">Users:</p>
+        <ul class=userList id="userlists"></ul>
+        <button type="button" class="add" onclick="location.href = 'p10.html'">Add</button>
+
+
+        <script>
+            function loadXml() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        Instantiate(this);
+                    }
+                };
+                xhttp.open("GET", "./users.xml", true);
+                xhttp.send();
+            }
+
+            function Instantiate(xml) {
+                var i, xmlDoc;
+
+                xmlDoc = xml.responseXML;
+                x = xmlDoc.getElementsByTagName("user");
+                var uname, email, pass, role;
+                for (i = 0; i < x.length; i++) {
+                    uname = xmlDoc.getElementsByTagName('uname')[i].childNodes[0].nodeValue;
+                    email = xmlDoc.getElementsByTagName("email")[i].childNodes[0].nodeValue;
+                    pass = xmlDoc.getElementsByTagName("pass")[i].childNodes[0].nodeValue;
+                    role = xmlDoc.getElementsByTagName("role")[i].childNodes[0].nodeValue;
+
+                    body.innerHTML += "User " + (i + 1) + "</br>Username: " + uname + "</br>Email " + email + "</br>Password " + pass + "</br>Role: " + role + "</br>";
+                    dltbtn(i);
+                    body.innerHTML += "</br></br>";
+                }
+
+            }
+
+            function dltbtn(ref) {
+                var button = document.createElement('button');
+                button.innerHTML = "Delete";
+                button.id = "d" + ref;
+                button.onclick = "dltref(ref)";
+                body.appendChild(button);
+            }
+
+            function dltref(ref) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var i, xmlDoc;
+                        xmlDoc = this.responseXML;
+                        x = xmlDoc.getElementsByTagName("user");
+                        for (i = 0; i < x.length; i++) {
+                            if (ref == i) {
+                                x[i].parentNode.removeChild(x[i]);
+                                return true;
+                            }
+                        }
+
+                    }
+                };
+                xhttp.open("GET", "./users.xml", true);
+                xhttp.send()
+                return false;
+            }
+
+            var body = document.getElementById("userlists");
+            loadXml();
+        </script>
+
+
 
 
 </body>
